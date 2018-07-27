@@ -32,10 +32,12 @@ ActiveRecord::Schema.define(version: 2018_07_26_201059) do
   create_table "gossips", force: :cascade do |t|
     t.string "title"
     t.string "content"
+    t.integer "user_id"
     t.integer "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tag_id"], name: "index_gossips_on_tag_id"
+    t.index ["user_id"], name: "index_gossips_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
